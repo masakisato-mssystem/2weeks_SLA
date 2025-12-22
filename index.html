@@ -6,8 +6,8 @@
     <title>エムズシステム 無料体験キャンペーン</title>
     <!-- Tailwind CSS (スタイリング用) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Noto Sans JP / Noto Serif JP) -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Noto Sans JP) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome (アイコン用) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -15,10 +15,6 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f3f4f6;
-        }
-        /* 見出しなどに高級感を出すための明朝体クラス */
-        .font-serif-jp {
-            font-family: 'Noto Serif JP', serif;
         }
         
         /* ポップアップ表示時の背景固定用 */
@@ -89,59 +85,72 @@
                 
                 <!-- 1. メインビジュアル（画像加工＋テキスト配置） -->
                 <div class="relative w-full h-72 md:h-96 bg-gray-900 overflow-hidden">
+                    <!-- 画像 -->
                     <!-- 
-                        画像: SLA_main.jpg (元のきれいな写真を使用してください)
-                        object-cover で枠いっぱいに表示
+                        修正: object-[75%_center] に変更
+                        画像をさらに左にずらします（右側の被写体を中心寄りにする）。
                     -->
-                    <img src="SLA_main.jpg" alt="寝室でくつろぐSLAショコラ" class="w-full h-full object-cover">
+                    <img src="SLA_main.jpg" alt="寝室でくつろぐSLAショコラ" class="w-full h-full object-cover object-[75%_center]">
                     
                     <!-- 
-                        【重要】CSSグラデーション（画像の加工部分）
-                        bg-gradient-to-r: 左から右へのグラデーション
-                        from-black/90: 左端は濃い黒（不透明度90%）
-                        via-black/40: 中間は薄い黒（不透明度40%）
-                        to-transparent: 右端は透明（元の写真の明るさを活かす）
+                        CSSグラデーション
+                        左側を少し濃くして文字を読みやすくする
                     -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
-                    <!-- テキスト配置エリア（左側に配置） -->
-                    <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-12 text-white">
-                        <div class="max-w-lg">
-                            <!-- 修正: ロゴ表記を M's System / SLA Chocolat に変更 -->
-                            <p class="text-xs md:text-sm font-bold tracking-widest mb-4 text-brand-gold opacity-90">M's System / SLA Chocolat</p>
+                    <!-- 
+                        【修正】テキスト配置エリア
+                        items-start: 左側に配置
+                        px-3 md:px-6: 余白をさらに減らし、もっと左へ寄せました
+                        text-center: テキストの行揃えを「真ん中」にする
+                    -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-start px-3 md:px-6 text-white text-center">
+                        <!-- 
+                            w-fit: コンテンツ幅に合わせてボックスを縮める
+                        -->
+                        <div class="max-w-xl w-fit">
+                            <!-- ロゴ表記 -->
+                            <p class="text-xs font-bold tracking-[0.15em] mb-4 text-white/80">M's System / SLA Chocolat</p>
                             
-                            <h2 class="text-2xl md:text-4xl font-serif-jp font-bold leading-tight mb-4 drop-shadow-md">
-                                寝室を、<br>ホテルスイートへ。
+                            <!-- 
+                                メインキャッチコピー
+                                サイズ: text-2xl md:text-3xl
+                                leading-loose
+                            -->
+                            <h2 class="text-2xl md:text-3xl font-bold leading-loose mb-5 drop-shadow-md">
+                                寝室を、<br>
+                                ホテルスイートへ。
                             </h2>
                             
-                            <!-- 修正: 改行位置を調整して3行構成に -->
-                            <p class="text-sm md:text-base leading-relaxed opacity-90 font-medium drop-shadow-sm">
-                                ベッドがもたらす「身体の休息」を、<br>
-                                「聴覚的な安らぎ」で補完する、<br>
-                                プロが選んだ音響インフラ。
+                            <!-- 
+                                サブコピー
+                                2行構成
+                            -->
+                            <p class="text-xs md:text-sm leading-loose text-white/90 font-medium drop-shadow-sm">
+                                ベッドがもたらす「<span class="font-bold">身体の休息</span>」を、<br>
+                                「<span class="font-bold">聴覚的な安らぎ</span>」で補完する、<span class="font-bold">プロが選んだ音響インフラ</span>。
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. オファーの提示（アンカープライス） -->
-                <!-- 修正: 「本体0円」の誤解を防ぎ、「無料体験」を強調するデザインに変更 -->
                 <div class="bg-amber-50/50 p-6 md:p-8 text-center border-b border-dashed border-brand-gold/30">
                     <div class="inline-block bg-white border-2 border-brand-gold rounded-xl shadow-sm px-4 py-6 md:px-8 md:py-8 max-w-lg w-full">
                         
-                        <!-- 通常価格の提示（控えめに） -->
+                        <!-- 通常価格の提示 -->
                         <p class="text-sm font-bold text-gray-500 mb-3">
                             通常価格 107,800円(税込)のSLAショコラが
                         </p>
                         
-                        <!-- 大きなボタン風エリア（体験の強調） -->
+                        <!-- 大きなボタン風エリア -->
                         <div class="bg-gradient-to-b from-red-500 to-red-600 text-white rounded-full py-3 px-4 md:px-8 shadow-md mb-3 transform transition hover:scale-105 duration-300 inline-block w-full max-w-sm mx-auto">
                             <p class="text-lg md:text-xl font-bold leading-none">
                                 たっぷり10日間 <span class="text-2xl md:text-3xl text-yellow-200 drop-shadow-sm mx-1">無料</span>でお試し
                             </p>
                         </div>
 
-                        <!-- 補足テキスト（費用0円の明記） -->
+                        <!-- 補足テキスト -->
                         <p class="text-xs md:text-sm text-red-700 font-bold mb-5">
                             ※体験料・送料は、今回に限り <span class="text-base md:text-lg underline decoration-red-300 decoration-4 underline-offset-[-2px]">全て0円</span> です。
                         </p>
@@ -163,7 +172,8 @@
                     <!-- 3. 利用シーンの展開 -->
                     <section>
                         <div class="text-center mb-8">
-                            <h3 class="text-xl font-serif-jp font-bold text-brand-brown leading-relaxed">
+                            <!-- 修正: ここもゴシック体に戻しました -->
+                            <h3 class="text-xl font-bold text-brand-brown leading-relaxed">
                                 片手で持てるサイズだから、<br>
                                 あなたの行く場所すべてが特等席に。
                             </h3>
@@ -179,6 +189,7 @@
                                     <h4 class="font-bold text-brand-brown mb-2 flex items-center">
                                         <i class="fa-solid fa-couch text-brand-gold mr-2"></i>リビングで
                                     </h4>
+                                    <!-- テキスト修正 -->
                                     <p class="text-sm text-gray-600 leading-relaxed">
                                         スマホやPCの動画が、まるで「目の前で演奏している」かのような臨場感に。 音が空間に溶け込むから、大切な家族との会話も自然と弾みます。
                                     </p>
@@ -207,13 +218,11 @@
                         <div class="text-center">
                             <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">Trusted By</span>
                             <h3 class="text-lg font-bold text-gray-800 mt-1">
-                                <!-- 修正: タイトル変更 -->
                                 日本を代表する一流ホテルが採用
                             </h3>
                         </div>
 
                         <!-- 導入実績リスト（ロゴ画像） -->
-                        <!-- 修正: テキストリストからロゴ画像の並列表示に変更 -->
                         <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 px-2">
                             <!-- 帝国ホテル -->
                             <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
@@ -230,7 +239,7 @@
                         </div>
                     </section>
 
-                    <!-- 【復活】Evidence. 科学的根拠 -->
+                    <!-- Evidence. 科学的根拠 -->
                     <section class="space-y-6">
                         <div class="border-l-4 border-brand-brown pl-4 mb-2">
                             <span class="text-sm text-gray-500 font-bold block">Evidence. 科学的根拠</span>
@@ -277,6 +286,37 @@
 
                     <!-- 5. 最終クロージング（限定性） -->
                     <div class="pt-4">
+                        <!-- 新品お届け＆そのまま購入訴求 -->
+                        <div class="mx-auto max-w-xl mb-14 bg-red-50 border-2 border-red-400 rounded-xl p-4 text-center shadow-md relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
+                            
+                            <p class="text-red-700 font-bold text-base md:text-lg mb-3">
+                                ＼ 面倒な入替不要！お届けするのは<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「新品」</span>です ／
+                            </p>
+                            
+                            <div class="bg-white/80 rounded-lg p-3 inline-block w-full border border-red-100">
+                                <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-brand-brown">
+                                    <span class="flex items-center">
+                                        <i class="fa-solid fa-gift text-red-400 mr-1.5 text-xl"></i>
+                                        まずは体験
+                                    </span>
+                                    
+                                    <i class="fa-solid fa-arrow-right text-red-400 text-xl hidden md:block animate-pulse"></i>
+                                    <i class="fa-solid fa-arrow-down text-red-400 text-xl md:hidden animate-bounce"></i>
+                                    
+                                    <span class="flex items-center">
+                                        気に入ったら
+                                        <span class="text-red-600 border-b-2 border-red-500 mx-1">そのまま購入OK</span>
+                                        <i class="fa-solid fa-thumbs-up text-red-500 ml-1"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-xs text-gray-600 mt-2 font-medium">
+                                ※もちろん、合わなければ返却してOK（返送も無料）
+                            </p>
+                        </div>
+
                         <div class="text-center mb-6">
                             <div class="animate-pulse mb-3">
                                 <p class="font-bold text-brand-brown text-xl">
@@ -285,7 +325,6 @@
                                 <p class="text-xs text-gray-500">（入力目安：1分）</p>
                             </div>
                             
-                            <!-- 限定性と安心感の注釈 -->
                             <div class="inline-block text-left bg-red-50 border border-red-200 rounded-lg p-3 space-y-1">
                                 <p class="text-red-700 text-sm font-bold flex items-center">
                                     <i class="fa-solid fa-circle-exclamation mr-2"></i>
@@ -310,7 +349,6 @@
                         </div>
 
                         <!-- Zoho Survey 埋め込みエリア -->
-                        <!-- 修正: iframe高さをレスポンシブ対応 (スマホ:2000px, PC:1700px) -->
                         <div class="w-full bg-white rounded-lg overflow-hidden relative min-h-[2000px] md:min-h-[1700px]">
                             <iframe 
                                 src="https://survey.zohopublic.com/zs/q2CWsi" 
@@ -339,7 +377,12 @@
 
                 </div> <!-- End コンテンツラッパー -->
                 
-                <!-- 修正: フッター的な「閉じるボタン」を削除しました -->
+                <!-- フッター的な閉じボタン -->
+                <div class="p-6 pb-24 bg-white text-center md:hidden">
+                    <button onclick="closeModal()" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-600 px-8 py-3 rounded-full font-bold shadow-sm border border-gray-300 transition duration-200">
+                        × 閉じる
+                    </button>
+                </div>
 
             </div>
         </div>
