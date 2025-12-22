@@ -107,15 +107,17 @@
                     <!-- テキスト配置エリア（左側に配置） -->
                     <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-12 text-white">
                         <div class="max-w-lg">
-                            <p class="text-xs md:text-sm font-bold tracking-widest mb-4 text-brand-gold opacity-90">MS SYSTEM / SLA CHOCOLAT</p>
+                            <!-- 修正: ロゴ表記を M's System / SLA Chocolat に変更 -->
+                            <p class="text-xs md:text-sm font-bold tracking-widest mb-4 text-brand-gold opacity-90">M's System / SLA Chocolat</p>
                             
                             <h2 class="text-2xl md:text-4xl font-serif-jp font-bold leading-tight mb-4 drop-shadow-md">
                                 寝室を、<br>ホテルスイートへ。
                             </h2>
                             
+                            <!-- 修正: 改行位置を調整して3行構成に -->
                             <p class="text-sm md:text-base leading-relaxed opacity-90 font-medium drop-shadow-sm">
-                                ベッドがもたらす「身体の休息」を、<br class="hidden md:block">
-                                「聴覚的な安らぎ」で補完する、<br class="md:hidden">
+                                ベッドがもたらす「身体の休息」を、<br>
+                                「聴覚的な安らぎ」で補完する、<br>
                                 プロが選んだ音響インフラ。
                             </p>
                         </div>
@@ -199,20 +201,25 @@
                         <div class="text-center">
                             <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">Trusted By</span>
                             <h3 class="text-lg font-bold text-gray-800 mt-1">
-                                有名ホテルや著名人も愛用
+                                <!-- 修正: タイトル変更 -->
+                                日本を代表する一流ホテルが採用
                             </h3>
                         </div>
 
-                        <!-- 導入実績リスト -->
-                        <div class="flex flex-wrap justify-center gap-3 text-sm font-medium text-gray-600">
-                            <div class="flex items-center bg-white px-4 py-2 rounded-full border border-gray-200 shadow-sm">
-                                <i class="fa-solid fa-hotel text-brand-gold mr-2"></i>ザ・リッツ・カールトン東京
+                        <!-- 導入実績リスト（ロゴ画像） -->
+                        <!-- 修正: テキストリストからロゴ画像の並列表示に変更 -->
+                        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 px-2">
+                            <!-- 帝国ホテル -->
+                            <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
+                                <img src="teikoku.png" alt="帝国ホテル" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>帝国ホテル</span>';">
                             </div>
-                            <div class="flex items-center bg-white px-4 py-2 rounded-full border border-gray-200 shadow-sm">
-                                <i class="fa-solid fa-hotel text-brand-gold mr-2"></i>パレスホテル東京
+                            <!-- パレスホテル東京 -->
+                            <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
+                                <img src="palace.png" alt="パレスホテル東京" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>パレスホテル<br>東京</span>';">
                             </div>
-                            <div class="flex items-center bg-white px-4 py-2 rounded-full border border-gray-200 shadow-sm">
-                                <i class="fa-solid fa-music text-brand-gold mr-2"></i>著名アーティスト多数
+                            <!-- ホテルニューオータニ -->
+                            <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
+                                <img src="newotani.png" alt="ホテルニューオータニ" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>ホテル<br>ニューオータニ</span>';">
                             </div>
                         </div>
 
