@@ -15,6 +15,8 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f3f4f6;
+            /* iPhoneのノッチ（上部の出っ張り）対策を追加 */
+            padding-top: env(safe-area-inset-top); 
         }
         /* 見出しなどに高級感を出すための明朝体クラス */
         .font-serif-jp {
@@ -36,7 +38,12 @@
         .bg-brand-gold { background-color: #C5A059; }
         .text-brand-gold { color: #C5A059; }
         
-        /* 閉じるボタンのアニメーション */
+        /* 閉じるボタンの調整（位置を少し下げ、アニメーションを維持） */
+        .close-btn {
+            top: 25px !important;    /* 20pxから25pxに下げて余裕を持たせる */
+            right: 20px !important;
+            z-index: 9999;           /* 他の要素に隠れないように最前面へ */
+        }
         .close-btn:hover {
             transform: rotate(90deg);
             transition: transform 0.3s ease;
