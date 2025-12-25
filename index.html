@@ -12,38 +12,34 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f3f4f6;
-            /* iPhoneのノッチ（上部の出っ張り）対策を追加 */
             padding-top: env(safe-area-inset-top); 
         }
-        /* 見出しなどに高級感を出すための明朝体クラス */
         .font-serif-jp {
             font-family: 'Noto Serif JP', serif;
         }
-        
-        /* ポップアップ表示時の背景固定用 */
         body.modal-open {
             overflow: hidden;
         }
-        /* スムーズなスクロール */
         html {
             scroll-behavior: smooth;
         }
-        
-        /* カスタムカラー */
         .text-brand-brown { color: #5D4037; }
         .bg-brand-brown { background-color: #5D4037; }
         .bg-brand-gold { background-color: #C5A059; }
         .text-brand-gold { color: #C5A059; }
         
-        /* 閉じるボタンの調整（位置を少し下げ、アニメーションを維持） */
         .close-btn {
-            top: 25px !important;    /* 20pxから25pxに下げて余裕を持たせる */
+            top: 25px !important;
             right: 20px !important;
-            z-index: 9999;           /* 他の要素に隠れないように最前面へ */
+            z-index: 9999;
         }
         .close-btn:hover {
             transform: rotate(90deg);
             transition: transform 0.3s ease;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
     </style>
 </head>
@@ -53,7 +49,7 @@
         <h1 class="text-2xl font-bold mb-4 text-gray-700">サイト埋め込みイメージ確認</h1>
         <p class="mb-6 text-gray-600">以下のボタンを押してポップアップを表示してください</p>
         <button onclick="openModal()" class="bg-brand-brown text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition font-bold text-lg animate-bounce">
-            10日間無料体験に申し込む
+            2週間お試し体験に申し込む
         </button>
     </div>
 
@@ -78,18 +74,13 @@
                 
                 <div class="relative w-full h-72 md:h-96 bg-gray-900 overflow-hidden">
                     <img src="main.jpg" alt="寝室でくつろぐSLAショコラ" class="w-full h-full object-cover object-[75%_center]">
-                    
                     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-
                     <div class="absolute inset-0 flex flex-col justify-center items-start px-3 md:px-6 text-white text-center">
                         <div class="max-w-xl w-fit">
                             <p class="text-xs font-bold tracking-[0.15em] mb-8 text-white/80">M's System / SLA Chocolat</p>
-                            
                             <h2 class="text-2xl md:text-3xl font-bold leading-loose mb-10 drop-shadow-md">
-                                寝室を、<br>
-                                ホテルスイートへ。
+                                寝室を、<br>ホテルスイートへ。
                             </h2>
-                            
                             <p class="text-xs md:text-sm leading-loose text-white/90 font-medium drop-shadow-sm">
                                 ベッドがもたらす「<span class="font-bold">身体の休息</span>」を、<br>
                                 「<span class="font-bold">聴覚的な安らぎ</span>」で補完する、<span class="font-bold">プロが選んだ音響インフラ</span>。
@@ -107,21 +98,38 @@
                         
                         <div class="bg-gradient-to-b from-red-500 to-red-600 text-white rounded-full py-3 px-4 md:px-8 shadow-md mb-3 transform transition hover:scale-105 duration-300 inline-block w-full max-w-sm mx-auto">
                             <p class="text-lg md:text-xl font-bold leading-none">
-                                たっぷり10日間 <span class="text-2xl md:text-3xl text-yellow-200 drop-shadow-sm mx-1">無料</span>でお試し
+                                たっぷり<span class="text-2xl md:text-3xl text-yellow-200 drop-shadow-sm mx-1">2週間</span> 自宅でお試し
                             </p>
                         </div>
 
-                        <p class="text-xs md:text-sm text-red-700 font-bold mb-5">
-                            ※体験料・送料は、今回に限り <span class="text-base md:text-lg underline decoration-red-300 decoration-4 underline-offset-[-2px]">全て0円</span> です。
-                        </p>
-                        
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-sm text-brand-brown font-bold leading-relaxed">
-                                <i class="fa-solid fa-gift text-red-500 mr-1"></i>
-                                お届けするのは<span class="text-red-600 text-lg mx-1 bg-red-100 px-1 rounded">【新品】</span>です。<br>
-                                <span class="text-xs md:text-sm mt-1 inline-block">気に入ったら返却不要で、そのまま購入OK！</span>
-                            </p>
+                        <div class="text-left bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-gray-700 space-y-3 mb-4">
+                            <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-2 text-center">お試し体験の流れと費用について</p>
+                            
+                            <div class="flex items-start">
+                                <span class="bg-brand-gold text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">決済</span>
+                                <span><strong>3,000円</strong>（事前決済）のみで2週間お試しいただけます。</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-brand-brown text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">購入</span>
+                                <span>気に入ってご購入される場合は、<strong>代金から3,000円を差し引いて</strong>決済させていただきます。（実質お試し無料）</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-gray-500 text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">配送</span>
+                                <span>専用の貸出機（通い箱入り）をお届けします。梱包の手間なく簡単にご返却も可能です。</span>
+                            </div>
+
+                            <div class="mt-2 pt-2 border-t border-dashed border-gray-300">
+                                <div class="flex items-center text-red-600 font-bold bg-red-50 p-2 rounded">
+                                    <i class="fa-solid fa-gift mr-2 text-lg"></i>
+                                    <span class="text-xs md:text-sm">ご購入の際は、<span class="border-b-2 border-red-400">新品</span>を別途送付させていただきます。</span>
+                                </div>
+                            </div>
                         </div>
+
+                         <p class="text-xs text-gray-500">
+                            ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
+                        </p>
+
                     </div>
                 </div>
 
@@ -173,7 +181,6 @@
                                 日本を代表する一流ホテルが採用
                             </h3>
                         </div>
-
                         <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 px-2">
                             <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
                                 <img src="teikoku.png" alt="帝国ホテル" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>帝国ホテル</span>';">
@@ -194,7 +201,6 @@
                         </div>
 
                         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                            
                             <div class="text-center mb-6">
                                 <h4 class="text-xl md:text-2xl font-bold text-brand-brown mb-2 leading-relaxed tracking-tight">
                                     <span class="text-brand-gold text-2xl md:text-3xl">「聴く」</span>のではなく、全身で<span class="text-brand-gold text-2xl md:text-3xl">「浴びる」</span>音響体験。
@@ -203,12 +209,10 @@
                                     従来のスピーカーとは決定的に違う、癒やしのメカニズム。
                                 </p>
                             </div>
-
                             <div class="mb-2 relative rounded-xl overflow-hidden shadow-lg group">
                                 <img src="sound.jpg" alt="音の広がり比較図" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/800x400?text=sound.jpg+Not+Found';">
                             </div>
                             <p class="text-right text-[10px] text-gray-400 mb-4">（※イメージ図）</p>
-
                             <div class="flex justify-between text-xs md:text-sm text-gray-700 mb-2 px-2 font-medium tracking-wide">
                                 <div class="w-1/2 text-center pr-4 border-r border-gray-200">
                                     <span class="block font-bold text-brand-brown text-base mb-1">エムズシステム</span>
@@ -225,7 +229,6 @@
                             <div class="bg-gray-50 px-4 py-2 border-b border-gray-100">
                                 <h4 class="font-bold text-gray-700 text-sm"><i class="fa-solid fa-flask mr-2 text-brand-gold"></i>日本レジリエンス医学研究所による実証データ ※1</h4>
                             </div>
-                            
                             <div class="w-full bg-gray-100 relative border-b border-gray-100">
                                 <img src="effect.png" alt="日本レジリエンス医学研究所による実証データ" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/600x1200?text=Vertically+Long+Image';">
                             </div>
@@ -263,7 +266,6 @@
 
                                 <div class="flex flex-col items-center text-center group">
                                     <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
-                                    
                                     <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 2</span>
                                     <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
                                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -273,7 +275,6 @@
 
                                 <div class="flex flex-col items-center text-center group">
                                     <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
-
                                     <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 3</span>
                                     <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
                                         <i class="fa-solid fa-music"></i>
@@ -310,8 +311,8 @@
                             </div>
 
                             <div class="bg-amber-50 border-2 border-brand-gold rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col items-center text-center">
-                                <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
-                                    今回だけの特典
+                                <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
+                                    貸出時セット
                                 </div>
                                 
                                 <h4 class="font-bold text-brand-brown mb-3 text-base">
@@ -319,7 +320,7 @@
                                 </h4>
 
                                 <div class="w-full bg-white/60 rounded-lg p-2 mb-4 text-left border border-amber-100">
-                                    <p class="text-[10px] text-gray-500 font-bold mb-1 text-center border-b border-gray-200 pb-1">標準付属品（これらも全てセット）</p>
+                                    <p class="text-[10px] text-gray-500 font-bold mb-1 text-center border-b border-gray-200 pb-1">標準付属品</p>
                                     <ul class="text-xs text-gray-600 space-y-1 pl-4 list-disc marker:text-brand-gold">
                                         <li>ACアダプタ</li>
                                         <li>USB電源ケーブル</li>
@@ -328,27 +329,24 @@
                                 </div>
 
                                 <div class="relative w-full">
-                                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white shadow-sm z-10">
-                                        さらに！
-                                    </div>
-                                    <div class="bg-white border-2 border-red-100 rounded-lg p-3 pt-4 shadow-sm">
+                                    <div class="bg-white border-2 border-blue-100 rounded-lg p-3 pt-4 shadow-sm">
                                         <div class="flex items-center justify-center gap-2 mb-1">
                                             <i class="fa-solid fa-mobile-screen-button text-brand-gold text-lg"></i>
                                             <i class="fa-solid fa-link text-gray-300 text-xs"></i>
                                             <i class="fa-solid fa-music text-brand-gold text-lg"></i>
                                         </div>
-                                        <p class="text-xs text-red-600 font-bold leading-tight mb-1">
+                                        <p class="text-xs text-blue-600 font-bold leading-tight mb-1">
                                             スマホ変換ケーブル<br>
-                                            <span class="text-[10px] font-normal text-gray-500">(USB-C & Lightning)</span>
+                                            <span class="text-[10px] font-normal text-gray-500">(Lightning & USB-C)</span>
                                         </p>
                                         <p class="text-[10px] text-brand-brown font-bold border-b border-brand-gold inline-block">
-                                            今回は特別に同梱します
+                                            お試し期間中は同梱します
                                         </p>
                                     </div>
                                 </div>
                                 
                                 <p class="text-[10px] text-gray-400 mt-2">
-                                    対応機種: iPhone / Android / PC など
+                                    ※ご購入時は別途オプションとなります
                                 </p>
                             </div>
                         </div>
@@ -357,86 +355,56 @@
                             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
                             
                             <p class="text-red-700 font-bold text-base md:text-lg mb-3">
-                                ＼ 面倒な入替不要！お届けするのは<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「新品」</span>です ／
+                                ＼ 梱包の手間なし！<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「通い箱」</span>でお届け ／
                             </p>
                             
                             <div class="bg-white/80 rounded-lg p-3 inline-block w-full border border-red-100">
                                 <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-brand-brown">
                                     <span class="flex items-center">
-                                        <i class="fa-solid fa-gift text-red-400 mr-1.5 text-xl"></i>
-                                        まずは体験
+                                        <i class="fa-solid fa-box-open text-red-400 mr-1.5 text-xl"></i>
+                                        専用ケースで到着
                                     </span>
-                                    
                                     <i class="fa-solid fa-arrow-right text-red-400 text-xl hidden md:block animate-pulse"></i>
                                     <i class="fa-solid fa-arrow-down text-red-400 text-xl md:hidden animate-bounce"></i>
-                                    
                                     <span class="flex items-center">
-                                        気に入ったら
-                                        <span class="text-red-600 border-b-2 border-red-500 mx-1">そのまま購入OK</span>
-                                        <i class="fa-solid fa-thumbs-up text-red-500 ml-1"></i>
+                                        <i class="fa-solid fa-box text-red-400 mr-1.5 text-xl"></i>
+                                        そのまま返送OK
                                     </span>
                                 </div>
                             </div>
                             
-                            <p class="text-xs text-gray-600 mt-2 font-medium">
-                                ※もちろん、合わなければ返却してOK（返送も無料）
-                            </p>
+                            <div class="mt-4 bg-yellow-100 border-2 border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg font-bold text-sm md:text-base shadow-sm animate-pulse">
+                                <i class="fa-solid fa-gift mr-2 text-xl text-yellow-600"></i>
+                                気に入ってご購入される際は、<span class="text-red-600 text-lg">3,000円引き</span>で<br class="md:hidden">
+                                <span class="text-xl text-red-600 border-b-4 border-red-200 inline-block leading-tight mx-1">「新品」</span>をお届けします！
+                            </div>
                         </div>
 
                         <div class="text-center mb-6">
                             <div class="animate-pulse mb-3">
                                 <p class="font-bold text-brand-brown text-xl">
-                                    ↓ 今すぐ空き状況を確認して申し込む ↓
+                                    ↓ 2週間の音響体験に申し込む ↓
                                 </p>
-                                <p class="text-xs text-gray-500">（入力目安：1分）</p>
+                                <p class="text-xs text-gray-500">（お試しパック3,000円の決済画面へ移動します）</p>
                             </div>
                             
-                            <div class="inline-block text-left bg-red-50 border border-red-200 rounded-lg p-3 space-y-1">
+                            <div class="inline-block text-left bg-red-50 border border-red-200 rounded-lg p-3 space-y-1 mb-6">
                                 <p class="text-red-700 text-sm font-bold flex items-center">
                                     <i class="fa-solid fa-circle-exclamation mr-2"></i>
-                                    今月の貸出枠：残りわずか（先着順）
+                                    貸出機に限りがあるため先着順となります
                                 </p>
                                 <p class="text-red-700 text-sm font-bold flex items-center">
                                     <i class="fa-regular fa-credit-card mr-2"></i>
-                                    クレジットカード登録は一切不要です
+                                    3,000円の事前決済が必要です
                                 </p>
                             </div>
-                        </div>
-                        
-                        <div class="text-center mb-6">
-                            <p class="text-xs text-gray-500 mb-1">
-                                ※iPhoneやMacなどでフォームが表示されない場合
-                            </p>
-                            <a href="https://survey.zohopublic.com/zs/q2CWsi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-3 rounded-full text-sm font-bold transition border border-gray-300">
-                                <i class="fa-solid fa-external-link-alt text-brand-brown"></i>
-                                申し込みフォームを別画面で開く
+
+                            <a href="#" target="_blank" class="block w-full max-w-md mx-auto bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold text-lg md:text-xl py-5 px-6 rounded-full shadow-lg transform transition hover:scale-105 duration-200 text-center">
+                                <i class="fa-solid fa-cart-shopping mr-2"></i>
+                                2週間お試しパックを購入する
+                                <span class="block text-xs md:text-sm font-normal mt-1 opacity-90">（エムズシステム公式オンラインショップへ）</span>
                             </a>
                         </div>
-
-                        <div class="w-full bg-white rounded-lg overflow-hidden relative min-h-[2100px] md:min-h-[2150px]">
-                            <iframe 
-                                src="https://survey.zohopublic.com/zs/q2CWsi" 
-                                class="w-full absolute inset-0 z-10 h-[2100px] md:h-[2150px] border-none"
-                                frameborder="0" 
-                                marginheight="0" 
-                                marginwidth="0"
-                                scrolling="no"
-                                allow="geolocation"
-                                title="Zoho Survey Form">
-                            </iframe>
-
-                            <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 bg-gray-50 z-0 p-8 text-center">
-                                <i class="fa-solid fa-clipboard-list text-5xl mb-4"></i>
-                                <h3 class="text-xl font-bold mb-2">Zoho Survey Form Area</h3>
-                                <p class="text-sm">ここにZohoのフォームが表示されます。</p>
-                                <div class="mt-4 w-full max-w-xs space-y-2 opacity-50">
-                                    <div class="h-8 bg-gray-200 rounded"></div>
-                                    <div class="h-8 bg-gray-200 rounded"></div>
-                                    <div class="h-10 bg-brand-gold rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div class="pb-12 bg-white"></div>
                     </div>
 
@@ -452,14 +420,12 @@
         // モーダルを開く
         function openModal() {
             modal.classList.remove('hidden');
-            // 背景スクロール防止
             body.classList.add('modal-open');
         }
 
         // モーダルを閉じる
         function closeModal() {
             modal.classList.add('hidden');
-            // 背景スクロール解除
             body.classList.remove('modal-open');
         }
 
@@ -469,24 +435,6 @@
                 closeModal();
             }
         });
-
-        // Zoho Survey 送信完了時のスクロール自動調整
-        // iframeの読み込み完了（画面切り替え含む）を検知し、フォーム開始位置へ戻す
-        const iframe = document.querySelector('iframe[title="Zoho Survey Form"]');
-        // スクロール対象
-        const modalContent = document.getElementById('modalScrollableContent');
-
-        if (iframe) {
-            iframe.onload = function() {
-                const formArea = iframe.parentElement;
-                if (modalContent && formArea) {
-                    modalContent.scrollTo({
-                        top: formArea.offsetTop - 50, 
-                        behavior: 'smooth'
-                    });
-                }
-            };
-        }
     </script>
 </body>
 </html>
