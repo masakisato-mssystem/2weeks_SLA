@@ -13,12 +13,10 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f3f4f6;
             padding-top: env(safe-area-inset-top); 
+            color: #374151;
         }
         .font-serif-jp {
             font-family: 'Noto Serif JP', serif;
-        }
-        body.modal-open {
-            overflow: hidden;
         }
         html {
             scroll-behavior: smooth;
@@ -28,420 +26,368 @@
         .bg-brand-gold { background-color: #C5A059; }
         .text-brand-gold { color: #C5A059; }
         
-        .close-btn {
-            top: 25px !important;
-            right: 20px !important;
-            z-index: 9999;
-        }
-        .close-btn:hover {
-            transform: rotate(90deg);
-            transition: transform 0.3s ease;
-        }
         @keyframes shimmer {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
+<body class="bg-gray-100">
 
-    <div class="text-center p-4">
-        <h1 class="text-2xl font-bold mb-4 text-gray-700">サイト埋め込みイメージ確認</h1>
-        <p class="mb-6 text-gray-600">以下のボタンを押してポップアップを表示してください</p>
-        <button onclick="openModal()" class="bg-brand-brown text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition font-bold text-lg animate-bounce">
-            2週間お試し体験に申し込む
-        </button>
-    </div>
-
-    <div id="campaignModal" class="fixed inset-0 z-50 hidden flex items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity backdrop-blur-sm" onclick="closeModal()"></div>
-
-        <button onclick="closeModal()" class="fixed top-4 right-4 z-[60] bg-white/90 rounded-full p-3 text-gray-600 hover:text-black close-btn shadow-xl border border-gray-200 md:hidden">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-
-        <div class="relative z-10 w-full h-full md:h-auto md:max-h-[90vh] md:max-w-2xl md:mx-auto bg-white md:rounded-lg shadow-xl overflow-hidden flex flex-col" style="background-color: white;">
+    <div class="max-w-2xl mx-auto bg-white shadow-xl min-h-screen overflow-hidden flex flex-col">
+        
+        <div class="flex-1">
             
-            <button onclick="closeModal()" class="hidden md:block absolute top-4 right-4 z-50 bg-white/80 rounded-full p-2 text-gray-600 hover:text-black close-btn shadow-md border border-gray-100">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-
-            <div id="modalScrollableContent" class="flex-1 overflow-y-auto">
-                
-                <div class="relative w-full h-72 md:h-96 bg-gray-900 overflow-hidden">
-                    <img src="main.jpg" alt="寝室でくつろぐSLAショコラ" class="w-full h-full object-cover object-[75%_center]">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute inset-0 flex flex-col justify-center items-start px-3 md:px-6 text-white text-center">
-                        <div class="max-w-xl w-fit">
-                            <p class="text-xs font-bold tracking-[0.15em] mb-8 text-white/80">M's System / SLA Chocolat</p>
-                            <h2 class="text-2xl md:text-3xl font-bold leading-loose mb-10 drop-shadow-md">
-                                寝室を、<br>ホテルスイートへ。
-                            </h2>
-                            <p class="text-xs md:text-sm leading-loose text-white/90 font-medium drop-shadow-sm">
-                                ベッドがもたらす「<span class="font-bold">身体の休息</span>」を、<br>
-                                「<span class="font-bold">聴覚的な安らぎ</span>」で補完する、<span class="font-bold">プロが選んだ音響インフラ</span>。
-                            </p>
-                        </div>
+            <div class="relative w-full h-72 md:h-96 bg-gray-900 overflow-hidden">
+                <img src="main.jpg" alt="寝室でくつろぐSLAショコラ" class="w-full h-full object-cover object-[75%_center]">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+                <div class="absolute inset-0 flex flex-col justify-center items-start px-3 md:px-6 text-white text-center">
+                    <div class="max-w-xl w-fit">
+                        <p class="text-xs font-bold tracking-[0.15em] mb-8 text-white/80">M's System / SLA Chocolat</p>
+                        <h2 class="text-2xl md:text-3xl font-bold leading-loose mb-10 drop-shadow-md">
+                            寝室を、<br>ホテルスイートへ。
+                        </h2>
+                        <p class="text-xs md:text-sm leading-loose text-white/90 font-medium drop-shadow-sm">
+                            ベッドがもたらす「<span class="font-bold">身体の休息</span>」を、<br>
+                            「<span class="font-bold">聴覚的な安らぎ</span>」で補完する、<span class="font-bold">プロが選んだ音響インフラ</span>。
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Trusted By セクションをここに移動 -->
-                <div class="bg-white py-8 px-4 border-b border-gray-100">
-                    <section class="space-y-6">
-                        <div class="text-center">
-                            <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">Trusted By</span>
-                            <h3 class="text-lg font-bold text-gray-800 mt-1">
-                                日本を代表する一流ホテルが採用
-                            </h3>
-                        </div>
-                        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 px-2">
-                            <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
-                                <img src="teikoku.png" alt="帝国ホテル" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>帝国ホテル</span>';">
-                            </div>
-                            <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
-                                <img src="palace.png" alt="パレスホテル東京" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>パレスホテル<br>東京</span>';">
-                            </div>
-                            <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
-                                <img src="newotani.png" alt="ホテルニューオータニ" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>ホテル<br>ニューオータニ</span>';">
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="bg-amber-50/50 p-6 md:p-8 text-center border-b border-dashed border-brand-gold/30">
-                    <div class="inline-block bg-white border-2 border-brand-gold rounded-xl shadow-sm px-4 py-6 md:px-8 md:py-8 max-w-lg w-full">
-                        
-                        <p class="text-sm font-bold text-gray-500 mb-3">
-                            通常価格 107,800円(税込)のSLAショコラを
-                        </p>
-                        
-                        <div class="bg-gradient-to-b from-red-500 to-red-600 text-white rounded-full py-3 px-4 md:px-8 shadow-md mb-3 transform transition hover:scale-105 duration-300 inline-block w-full max-w-sm mx-auto">
-                            <p class="text-lg md:text-xl font-bold leading-none">
-                                たっぷり<span class="text-2xl md:text-3xl text-yellow-200 drop-shadow-sm mx-1">2週間</span> 自宅でお試し
-                            </p>
-                        </div>
-
-                        <div class="text-left bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-gray-700 space-y-3 mb-4">
-                            <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-2 text-center">お試し体験の流れと費用について</p>
-                            
-                            <div class="flex items-start">
-                                <span class="bg-brand-gold text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">決済</span>
-                                <span><strong>3,000円</strong>（事前決済）のみで2週間お試しいただけます。</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="bg-brand-brown text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">購入</span>
-                                <span>気に入ってご購入される場合は、<strong>代金から3,000円を差し引いて</strong>決済させていただきます。（実質お試し無料）</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="bg-gray-500 text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">配送</span>
-                                <span>専用の貸出機（通い箱入り）をお届けします。梱包の手間なく簡単にご返却も可能です。</span>
-                            </div>
-
-                            <div class="mt-2 pt-2 border-t border-dashed border-gray-300">
-                                <div class="flex items-center text-red-600 font-bold bg-red-50 p-2 rounded">
-                                    <i class="fa-solid fa-gift mr-2 text-lg"></i>
-                                    <span class="text-xs md:text-sm">ご購入の際は、<span class="border-b-2 border-red-400">新品</span>を別途送付させていただきます。</span>
-                                </div>
-                            </div>
-                        </div>
-
-                         <p class="text-xs text-gray-500">
-                            ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
-                        </p>
-
+            <div class="bg-white py-8 px-4 border-b border-gray-100">
+                <section class="space-y-6">
+                    <div class="text-center">
+                        <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">Trusted By</span>
+                        <h3 class="text-lg font-bold text-gray-800 mt-1">
+                            日本を代表する一流ホテルが採用
+                        </h3>
                     </div>
+                    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 px-2">
+                        <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
+                            <img src="teikoku.png" alt="帝国ホテル" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>帝国ホテル</span>';">
+                        </div>
+                        <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
+                            <img src="palace.png" alt="パレスホテル東京" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>パレスホテル<br>東京</span>';">
+                        </div>
+                        <div class="bg-white p-2 rounded-lg border border-gray-100 shadow-sm w-28 md:w-36 h-16 flex items-center justify-center">
+                            <img src="newotani.png" alt="ホテルニューオータニ" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold text-gray-600\'>ホテル<br>ニューオータニ</span>';">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="bg-amber-50/50 p-6 md:p-8 text-center border-b border-dashed border-brand-gold/30">
+                <div class="inline-block bg-white border-2 border-brand-gold rounded-xl shadow-sm px-4 py-6 md:px-8 md:py-8 max-w-lg w-full">
+                    
+                    <p class="text-sm font-bold text-gray-500 mb-3">
+                        通常価格 107,800円(税込)のSLAショコラを
+                    </p>
+                    
+                    <div class="bg-gradient-to-b from-red-500 to-red-600 text-white rounded-full py-3 px-4 md:px-8 shadow-md mb-3 inline-block w-full max-w-sm mx-auto">
+                        <p class="text-lg md:text-xl font-bold leading-none">
+                            たっぷり<span class="text-2xl md:text-3xl text-yellow-200 drop-shadow-sm mx-1">2週間</span> 自宅でお試し
+                        </p>
+                    </div>
+
+                    <div class="text-left bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-gray-700 space-y-3 mb-4">
+                        <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-2 text-center">お試し体験の流れと費用について</p>
+                        
+                        <div class="flex items-start">
+                            <span class="bg-brand-gold text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">お支払</span>
+                            <span>原則、<strong>ヤマト運輸の代金引き換え</strong>にて、お届けと同時に3,000円をお支払いいただきます。</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-brand-brown text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">購入</span>
+                            <span>気に入ってご購入される場合は、<strong>代金から3,000円を差し引いて</strong>決済させていただきます。（実質お試し無料）</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="bg-gray-500 text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">配送</span>
+                            <span>専用の貸出機（通い箱入り）をお届けします。梱包の手間なく簡単にご返却も可能です。</span>
+                        </div>
+
+                        <div class="mt-2 pt-2 border-t border-dashed border-gray-300">
+                            <div class="flex items-center text-red-600 font-bold bg-red-50 p-2 rounded">
+                                <i class="fa-solid fa-gift mr-2 text-lg"></i>
+                                <span class="text-xs md:text-sm">ご購入の際は、<span class="border-b-2 border-red-400">新品</span>を別途送付させていただきます。</span>
+                            </div>
+                        </div>
+                    </div>
+
+                        <p class="text-xs text-gray-500">
+                        ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
+                    </p>
+
                 </div>
+            </div>
 
-                <div class="p-6 md:p-10 space-y-12">
+            <div class="p-6 md:p-10 space-y-12">
 
-                    <section>
-                        <div class="text-center mb-8">
-                            <h3 class="text-xl font-bold text-brand-brown leading-relaxed">
-                                片手で持てるサイズだから、<br>
-                                あなたの行く場所すべてが特等席に。
-                            </h3>
-                        </div>
+                <section>
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-bold text-brand-brown leading-relaxed">
+                            片手で持てるサイズだから、<br>
+                            あなたの行く場所すべてが特等席に。
+                        </h3>
+                    </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
-                                <div class="h-48 bg-gray-200">
-                                    <img src="scene_living.jpg" alt="リビングでタブレット" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Living+Scene';">
-                                </div>
-                                <div class="p-4">
-                                    <h4 class="font-bold text-brand-brown mb-2 flex items-center">
-                                        <i class="fa-solid fa-couch text-brand-gold mr-2"></i>リビングで
-                                    </h4>
-                                    <p class="text-sm text-gray-600 leading-relaxed">
-                                        スマホやPCの動画が、まるで「目の前で演奏している」かのような臨場感に。 音が空間に溶け込むから、大切な家族との会話も自然と弾みます。
-                                    </p>
-                                </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
+                            <div class="h-48 bg-gray-200">
+                                <img src="scene_living.jpg" alt="リビングでタブレット" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Living+Scene';">
                             </div>
-
-                            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
-                                <div class="h-48 bg-gray-200">
-                                    <img src="scene_desk.jpg" alt="デスクで仕事中" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Desk+Scene';">
-                                </div>
-                                <div class="p-4">
-                                    <h4 class="font-bold text-brand-brown mb-2 flex items-center">
-                                        <i class="fa-solid fa-mug-hot text-brand-gold mr-2"></i>デスクで
-                                    </h4>
-                                    <p class="text-sm text-gray-600 leading-relaxed">
-                                        仕事や読書のBGMに。音が空間に溶け込み、集中力を妨げずリラックスできます。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="space-y-6">
-                        <div class="border-l-4 border-brand-brown pl-4 mb-2">
-                            <span class="text-sm text-gray-500 font-bold block">Evidence. 科学的根拠</span>
-                            <h3 class="text-xl font-bold text-gray-800">なぜ、疲れが癒やされるのか？</h3>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                            <div class="text-center mb-6">
-                                <h4 class="text-xl md:text-2xl font-bold text-brand-brown mb-2 leading-relaxed tracking-tight">
-                                    <span class="text-brand-gold text-2xl md:text-3xl">「聴く」</span>のではなく、全身で<span class="text-brand-gold text-2xl md:text-3xl">「浴びる」</span>音響体験。
+                            <div class="p-4">
+                                <h4 class="font-bold text-brand-brown mb-2 flex items-center">
+                                    <i class="fa-solid fa-couch text-brand-gold mr-2"></i>リビングで
                                 </h4>
-                                <p class="text-sm md:text-base text-gray-600 font-medium tracking-wide">
-                                    従来のスピーカーとは決定的に違う、癒やしのメカニズム。
-                                </p>
-                            </div>
-                            <div class="mb-2 relative rounded-xl overflow-hidden shadow-lg group">
-                                <img src="sound.jpg" alt="音の広がり比較図" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/800x400?text=sound.jpg+Not+Found';">
-                            </div>
-                            <p class="text-right text-[10px] text-gray-400 mb-4">（※イメージ図）</p>
-                            <div class="flex justify-between text-xs md:text-sm text-gray-700 mb-2 px-2 font-medium tracking-wide">
-                                <div class="w-1/2 text-center pr-4 border-r border-gray-200">
-                                    <span class="block font-bold text-brand-brown text-base mb-1">エムズシステム</span>
-                                    空間全体を包み込む音
-                                </div>
-                                <div class="w-1/2 text-center pl-4">
-                                    <span class="block font-bold text-gray-500 text-base mb-1">一般的なスピーカー</span>
-                                    直線的な音
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                            <div class="bg-gray-50 px-4 py-2 border-b border-gray-100">
-                                <h4 class="font-bold text-gray-700 text-sm"><i class="fa-solid fa-flask mr-2 text-brand-gold"></i>日本レジリエンス医学研究所による実証データ ※1</h4>
-                            </div>
-                            <div class="w-full bg-gray-100 relative border-b border-gray-100">
-                                <img src="effect.png" alt="日本レジリエンス医学研究所による実証データ" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/600x1200?text=Vertically+Long+Image';">
-                            </div>
-                            <div class="p-4 bg-amber-50/50 border-t border-amber-100 relative z-10">
-                                <p class="text-sm md:text-base text-brand-brown font-medium text-center leading-relaxed">
-                                    統計的にも証明された「<span class="font-bold">心とからだに優しい音</span>」。<br>
-                                    聴き疲れせず、あなたを<span class="font-bold">深いリラックス</span>へ導きます。
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    スマホやPCの動画が、まるで「目の前で演奏している」かのような臨場感に。 音が空間に溶け込むから、大切な家族との会話も自然と弾みます。
                                 </p>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="pt-4">
-                        
-                        <div class="mb-16 px-4 md:px-8">
-                            <h4 class="text-center font-bold text-brand-brown text-lg md:text-xl mb-10">
-                                使い方は、たったの<span class="text-3xl font-serif-jp mx-1 text-brand-gold">3</span>ステップ。
+                        <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
+                            <div class="h-48 bg-gray-200">
+                                <img src="scene_desk.jpg" alt="デスクで仕事中" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Desk+Scene';">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-brand-brown mb-2 flex items-center">
+                                    <i class="fa-solid fa-mug-hot text-brand-gold mr-2"></i>デスクで
+                                </h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    仕事や読書のBGMに。音が空間に溶け込み、集中力を妨げずリラックスできます。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="space-y-6">
+                    <div class="border-l-4 border-brand-brown pl-4 mb-2">
+                        <span class="text-sm text-gray-500 font-bold block">Evidence. 科学的根拠</span>
+                        <h3 class="text-xl font-bold text-gray-800">なぜ、疲れが癒やされるのか？</h3>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <div class="text-center mb-6">
+                            <h4 class="text-xl md:text-2xl font-bold text-brand-brown mb-2 leading-relaxed tracking-tight">
+                                <span class="text-brand-gold text-2xl md:text-3xl">「聴く」</span>のではなく、全身で<span class="text-brand-gold text-2xl md:text-3xl">「浴びる」</span>音響体験。
                             </h4>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative max-w-4xl mx-auto">
-                                <div class="hidden md:block absolute top-1/2 left-[32%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </div>
-                                <div class="hidden md:block absolute top-1/2 left-[65%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </div>
+                            <p class="text-sm md:text-base text-gray-600 font-medium tracking-wide">
+                                従来のスピーカーとは決定的に違う、癒やしのメカニズム。
+                            </p>
+                        </div>
+                        <div class="mb-2 relative rounded-xl overflow-hidden shadow-lg group">
+                            <img src="sound.jpg" alt="音の広がり比較図" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/800x400?text=sound.jpg+Not+Found';">
+                        </div>
+                        <p class="text-right text-[10px] text-gray-400 mb-4">（※イメージ図）</p>
+                        <div class="flex justify-between text-xs md:text-sm text-gray-700 mb-2 px-2 font-medium tracking-wide">
+                            <div class="w-1/2 text-center pr-4 border-r border-gray-200">
+                                <span class="block font-bold text-brand-brown text-base mb-1">エムズシステム</span>
+                                空間全体を包み込む音
+                            </div>
+                            <div class="w-1/2 text-center pl-4">
+                                <span class="block font-bold text-gray-500 text-base mb-1">一般的なスピーカー</span>
+                                直線的な音
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="flex flex-col items-center text-center group">
-                                    <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 1</span>
-                                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
-                                        <i class="fa-solid fa-plug"></i>
-                                    </div>
-                                    <p class="font-bold text-gray-700 text-sm md:text-base">コンセントに挿す</p>
-                                </div>
+                    <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                        <div class="bg-gray-50 px-4 py-2 border-b border-gray-100">
+                            <h4 class="font-bold text-gray-700 text-sm"><i class="fa-solid fa-flask mr-2 text-brand-gold"></i>日本レジリエンス医学研究所による実証データ ※1</h4>
+                        </div>
+                        <div class="w-full bg-gray-100 relative border-b border-gray-100">
+                            <img src="effect.png" alt="日本レジリエンス医学研究所による実証データ" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/600x1200?text=Vertically+Long+Image';">
+                        </div>
+                        <div class="p-4 bg-amber-50/50 border-t border-amber-100 relative z-10">
+                            <p class="text-sm md:text-base text-brand-brown font-medium text-center leading-relaxed">
+                                統計的にも証明された「<span class="font-bold">心とからだに優しい音</span>」。<br>
+                                聴き疲れせず、あなたを<span class="font-bold">深いリラックス</span>へ導きます。
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-                                <div class="flex flex-col items-center text-center group">
-                                    <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
-                                    <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 2</span>
-                                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
-                                        <i class="fa-solid fa-mobile-screen-button"></i>
-                                    </div>
-                                    <p class="font-bold text-gray-700 text-sm md:text-base">スマホと繋ぐ</p>
-                                </div>
-
-                                <div class="flex flex-col items-center text-center group">
-                                    <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
-                                    <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 3</span>
-                                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
-                                        <i class="fa-solid fa-music"></i>
-                                    </div>
-                                    <p class="font-bold text-gray-700 text-sm md:text-base">いつもの音楽を再生する</p>
-                                </div>
+                <div class="pt-4">
+                    
+                    <div class="mb-16 px-4 md:px-8">
+                        <h4 class="text-center font-bold text-brand-brown text-lg md:text-xl mb-10">
+                            使い方は、たったの<span class="text-3xl font-serif-jp mx-1 text-brand-gold">3</span>ステップ。
+                        </h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative max-w-4xl mx-auto">
+                            <div class="hidden md:block absolute top-1/2 left-[32%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            <div class="hidden md:block absolute top-1/2 left-[65%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl">
+                                <i class="fa-solid fa-angle-right"></i>
                             </div>
 
-                            <div class="text-center mt-12">
-                                <p class="text-base md:text-lg font-bold text-brand-brown leading-relaxed border-b-2 border-brand-gold/30 inline-block pb-2 px-4">
-                                    これだけで、お部屋がホテルスイートに変わります。
-                                </p>
+                            <div class="flex flex-col items-center text-center group">
+                                <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 1</span>
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
+                                    <i class="fa-solid fa-plug"></i>
+                                </div>
+                                <p class="font-bold text-gray-700 text-sm md:text-base">コンセントに挿す</p>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center group">
+                                <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
+                                <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 2</span>
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
+                                <p class="font-bold text-gray-700 text-sm md:text-base">スマホと繋ぐ</p>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center group">
+                                <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
+                                <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 3</span>
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
+                                <p class="font-bold text-gray-700 text-sm md:text-base">いつもの音楽を再生する</p>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 px-2 md:px-6">
-                            <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col items-center text-center">
-                                <div class="text-brand-brown text-3xl mb-3">
-                                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-                                </div>
-                                <h4 class="font-bold text-brand-brown mb-3 text-base">
-                                    ベッドサイドに収まる<br>コンパクトサイズ
-                                </h4>
-                                <ul class="text-sm text-gray-600 space-y-2 text-left inline-block bg-gray-50 p-3 rounded-lg w-full">
-                                    <li class="flex items-start">
-                                        <span class="font-bold w-14 shrink-0 text-brand-brown">サイズ:</span>
-                                        <span>幅22cm × 高さ12.7cm<br>× 奥行9.6cm</span>
-                                    </li>
-                                    <li class="flex items-start border-t border-gray-200 pt-2">
-                                        <span class="font-bold w-14 shrink-0 text-brand-brown">重さ:</span>
-                                        <span>860g（片手で持てる軽さ）</span>
-                                    </li>
+                        <div class="text-center mt-12">
+                            <p class="text-base md:text-lg font-bold text-brand-brown leading-relaxed border-b-2 border-brand-gold/30 inline-block pb-2 px-4">
+                                これだけで、お部屋がホテルスイートに変わります。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 px-2 md:px-6">
+                        <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col items-center text-center">
+                            <div class="text-brand-brown text-3xl mb-3">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                            </div>
+                            <h4 class="font-bold text-brand-brown mb-3 text-base">
+                                ベッドサイドに収まる<br>コンパクトサイズ
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-2 text-left inline-block bg-gray-50 p-3 rounded-lg w-full">
+                                <li class="flex items-start">
+                                    <span class="font-bold w-14 shrink-0 text-brand-brown">サイズ:</span>
+                                    <span>幅22cm × 高さ12.7cm<br>× 奥行9.6cm</span>
+                                </li>
+                                <li class="flex items-start border-t border-gray-200 pt-2">
+                                    <span class="font-bold w-14 shrink-0 text-brand-brown">重さ:</span>
+                                    <span>860g（片手で持てる軽さ）</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-50 border-2 border-brand-gold rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col items-center text-center">
+                            <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
+                                貸出時セット
+                            </div>
+                            
+                            <h4 class="font-bold text-brand-brown mb-3 text-base">
+                                届いてすぐ、<br>あなたのスマホで聴けます。
+                            </h4>
+
+                            <div class="w-full bg-white/60 rounded-lg p-2 mb-4 text-left border border-amber-100">
+                                <p class="text-[10px] text-gray-500 font-bold mb-1 text-center border-b border-gray-200 pb-1">標準付属品</p>
+                                <ul class="text-xs text-gray-600 space-y-1 pl-4 list-disc marker:text-brand-gold">
+                                    <li>ACアダプタ</li>
+                                    <li>USB電源ケーブル</li>
+                                    <li>ステレオミニケーブル</li>
                                 </ul>
                             </div>
 
-                            <div class="bg-amber-50 border-2 border-brand-gold rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col items-center text-center">
-                                <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
-                                    貸出時セット
-                                </div>
-                                
-                                <h4 class="font-bold text-brand-brown mb-3 text-base">
-                                    届いてすぐ、<br>あなたのスマホで聴けます。
-                                </h4>
-
-                                <div class="w-full bg-white/60 rounded-lg p-2 mb-4 text-left border border-amber-100">
-                                    <p class="text-[10px] text-gray-500 font-bold mb-1 text-center border-b border-gray-200 pb-1">標準付属品</p>
-                                    <ul class="text-xs text-gray-600 space-y-1 pl-4 list-disc marker:text-brand-gold">
-                                        <li>ACアダプタ</li>
-                                        <li>USB電源ケーブル</li>
-                                        <li>ステレオミニケーブル</li>
-                                    </ul>
-                                </div>
-
-                                <div class="relative w-full">
-                                    <div class="bg-white border-2 border-blue-100 rounded-lg p-3 pt-4 shadow-sm">
-                                        <div class="flex items-center justify-center gap-2 mb-1">
-                                            <i class="fa-solid fa-mobile-screen-button text-brand-gold text-lg"></i>
-                                            <i class="fa-solid fa-link text-gray-300 text-xs"></i>
-                                            <i class="fa-solid fa-music text-brand-gold text-lg"></i>
-                                        </div>
-                                        <p class="text-xs text-blue-600 font-bold leading-tight mb-1">
-                                            スマホ変換ケーブル<br>
-                                            <span class="text-[10px] font-normal text-gray-500">(Lightning & USB-C)</span>
-                                        </p>
-                                        <p class="text-[10px] text-brand-brown font-bold border-b border-brand-gold inline-block">
-                                            お試し期間中は同梱します
-                                        </p>
+                            <div class="relative w-full">
+                                <div class="bg-white border-2 border-blue-100 rounded-lg p-3 pt-4 shadow-sm">
+                                    <div class="flex items-center justify-center gap-2 mb-1">
+                                        <i class="fa-solid fa-mobile-screen-button text-brand-gold text-lg"></i>
+                                        <i class="fa-solid fa-link text-gray-300 text-xs"></i>
+                                        <i class="fa-solid fa-music text-brand-gold text-lg"></i>
                                     </div>
+                                    <p class="text-xs text-blue-600 font-bold leading-tight mb-1">
+                                        スマホ変換ケーブル<br>
+                                        <span class="text-[10px] font-normal text-gray-500">(Lightning & USB-C)</span>
+                                    </p>
+                                    <p class="text-[10px] text-brand-brown font-bold border-b border-brand-gold inline-block">
+                                        お試し期間中は同梱します
+                                    </p>
                                 </div>
-                                
-                                <p class="text-[10px] text-gray-400 mt-2">
-                                    ※ご購入時は別途オプションとなります
-                                </p>
                             </div>
-                        </div>
-
-                        <div class="mx-auto max-w-xl mb-14 bg-red-50 border-2 border-red-400 rounded-xl p-4 text-center shadow-md relative overflow-hidden group">
-                            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
                             
-                            <p class="text-red-700 font-bold text-base md:text-lg mb-3">
-                                ＼ 梱包の手間なし！<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「通い箱」</span>でお届け ／
+                            <p class="text-[10px] text-gray-400 mt-2">
+                                ※ご購入時は別途オプションとなります
                             </p>
-                            
-                            <div class="mb-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                                <img src="delivery_box.jpg" alt="SLAショコラ専用通い箱" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Delivery+Box+Image';">
-                            </div>
-                            <div class="bg-white/80 rounded-lg p-3 inline-block w-full border border-red-100">
-                                <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-brand-brown">
-                                    <span class="flex items-center">
-                                        <i class="fa-solid fa-box-open text-red-400 mr-1.5 text-xl"></i>
-                                        専用ケースで到着
-                                    </span>
-                                    <i class="fa-solid fa-arrow-right text-red-400 text-xl hidden md:block animate-pulse"></i>
-                                    <i class="fa-solid fa-arrow-down text-red-400 text-xl md:hidden animate-bounce"></i>
-                                    <span class="flex items-center">
-                                        <i class="fa-solid fa-box text-red-400 mr-1.5 text-xl"></i>
-                                        そのまま返送OK
-                                    </span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-4 bg-yellow-100 border-2 border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg font-bold text-sm md:text-base shadow-sm animate-pulse">
-                                <i class="fa-solid fa-gift mr-2 text-xl text-yellow-600"></i>
-                                気に入ってご購入される際は、<span class="text-red-600 text-lg">3,000円引き</span>で<br class="md:hidden">
-                                <span class="text-xl text-red-600 border-b-4 border-red-200 inline-block leading-tight mx-1">「新品」</span>をお届けします！
-                            </div>
                         </div>
-
-                        <div class="text-center mb-6">
-                            <div class="animate-pulse mb-3">
-                                <p class="font-bold text-brand-brown text-xl">
-                                    ↓ 2週間の音響体験に申し込む ↓
-                                </p>
-                                <p class="text-xs text-gray-500">（お試しパック3,000円の決済画面へ移動します）</p>
-                            </div>
-                            
-                            <div class="inline-block text-left bg-red-50 border border-red-200 rounded-lg p-3 space-y-1 mb-6">
-                                <p class="text-red-700 text-sm font-bold flex items-center">
-                                    <i class="fa-solid fa-circle-exclamation mr-2"></i>
-                                    貸出機に限りがあるため先着順となります
-                                </p>
-                                <p class="text-red-700 text-sm font-bold flex items-center">
-                                    <i class="fa-regular fa-credit-card mr-2"></i>
-                                    3,000円の事前決済が必要です
-                                </p>
-                            </div>
-
-                            <a href="#" target="_blank" class="block w-full max-w-md mx-auto bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold text-lg md:text-xl py-5 px-6 rounded-full shadow-lg transform transition hover:scale-105 duration-200 text-center">
-                                <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                2週間お試しパックを購入する
-                                <span class="block text-xs md:text-sm font-normal mt-1 opacity-90">（エムズシステム公式オンラインショップへ）</span>
-                            </a>
-                        </div>
-                        
-                        <div class="pb-12 bg-white"></div>
                     </div>
 
-                </div> </div>
+                    <div class="mx-auto max-w-xl mb-14 bg-red-50 border-2 border-red-400 rounded-xl p-4 text-center shadow-md relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
+                        
+                        <p class="text-red-700 font-bold text-base md:text-lg mb-3">
+                            ＼ 梱包の手間なし！<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「通い箱」</span>でお届け ／
+                        </p>
+                        
+                        <div class="mb-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                            <img src="delivery_box.jpg" alt="SLAショコラ専用通い箱" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Delivery+Box+Image';">
+                        </div>
+                        <div class="bg-white/80 rounded-lg p-3 inline-block w-full border border-red-100">
+                            <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-brand-brown">
+                                <span class="flex items-center">
+                                    <i class="fa-solid fa-box-open text-red-400 mr-1.5 text-xl"></i>
+                                    専用ケースで到着
+                                </span>
+                                <i class="fa-solid fa-arrow-right text-red-400 text-xl hidden md:block animate-pulse"></i>
+                                <i class="fa-solid fa-arrow-down text-red-400 text-xl md:hidden animate-bounce"></i>
+                                <span class="flex items-center">
+                                    <i class="fa-solid fa-box text-red-400 mr-1.5 text-xl"></i>
+                                    そのまま返送OK
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-yellow-100 border-2 border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg font-bold text-sm md:text-base shadow-sm animate-pulse">
+                            <i class="fa-solid fa-gift mr-2 text-xl text-yellow-600"></i>
+                            気に入ってご購入される際は、<span class="text-red-600 text-lg">3,000円引き</span>で<br class="md:hidden">
+                            <span class="text-xl text-red-600 border-b-4 border-red-200 inline-block leading-tight mx-1">「新品」</span>をお届けします！
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <div class="mb-6">
+                            <p class="font-bold text-brand-brown text-xl">
+                                ↓ 2週間の音響体験に申し込む ↓
+                            </p>
+                        </div>
+                        
+                        <div class="inline-block text-left bg-red-50 border border-red-200 rounded-lg p-3 space-y-1 mb-6">
+                            <p class="text-red-700 text-sm font-bold flex items-center">
+                                <i class="fa-solid fa-circle-exclamation mr-2"></i>
+                                貸出機に限りがあるため先着順となります
+                            </p>
+                            <p class="text-red-700 text-sm font-bold flex items-center">
+                                <i class="fa-solid fa-money-bill-wave mr-2"></i>
+                                費用（3,000円）は原則、ヤマト運輸の代金引き換えとなります
+                            </p>
+                        </div>
+
+                        <div class="w-full mt-4">
+                            <div class="relative flex py-5 items-center">
+                                <div class="flex-grow border-t border-gray-300 border-dashed"></div>
+                                <span class="flex-shrink-0 mx-4 text-gray-400 text-xs tracking-widest">お申込みフォーム</span>
+                                <div class="flex-grow border-t border-gray-300 border-dashed"></div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-xl border border-gray-200 p-2 md:p-4 shadow-inner">
+                                <iframe src="https://survey.zohopublic.com/zs/q2CWsi" frameborder='0' style='height:700px;width:100%;' marginwidth='0' marginheight='0' scrolling='auto' allow='geolocation'></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pb-12 bg-white"></div>
+                </div>
+
+            </div> 
         </div>
     </div>
 
-    <script>
-        // モーダル制御用のスクリプト
-        const modal = document.getElementById('campaignModal');
-        const body = document.body;
-
-        // モーダルを開く
-        function openModal() {
-            modal.classList.remove('hidden');
-            body.classList.add('modal-open');
-        }
-
-        // モーダルを閉じる
-        function closeModal() {
-            modal.classList.add('hidden');
-            body.classList.remove('modal-open');
-        }
-
-        // キーボードのESCキーで閉じる
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>
