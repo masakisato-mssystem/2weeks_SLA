@@ -370,29 +370,16 @@
                         </div>
                     </div>
                     
-                    <div class="text-center mb-6">
-                        <p class="text-xs text-gray-500 mb-1">
-                            ※iPhoneやMacなどでフォームが表示されない場合
-                        </p>
-                        <a href="https://survey.zohopublic.com/zs/q2CWsi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-3 rounded-full text-sm font-bold transition border border-gray-300">
-                            <i class="fa-solid fa-external-link-alt text-brand-brown"></i>
-                            申し込みフォームを別画面で開く
+                    <!-- ▼ 修正：iframeを削除し、リンクボタンに変更 ▼ -->
+                    <div class="mt-8 mb-12 px-2 text-center">
+                        <a href="https://survey.zohopublic.com/zs/q2CWsi" class="block w-full max-w-md mx-auto bg-[#d66861] hover:bg-[#c25552] text-white text-center py-4 md:py-5 rounded-sm shadow-md transition duration-300 font-bold text-lg md:text-xl tracking-wider">
+                            2週間のお試し体験に申し込む
                         </a>
+                        <p class="text-xs text-gray-500 mt-4">
+                            ※クリックすると、専用の申し込みフォーム画面へ移動します。
+                        </p>
                     </div>
-
-                    <!-- 修正: JS等で触らないシンプルな状態に復元（スクロール無効化＆高さ確保のみ） -->
-                    <div class="w-full bg-white rounded-lg overflow-hidden relative min-h-[2400px] md:min-h-[1800px]">
-                        <iframe 
-                            src="https://survey.zohopublic.com/zs/q2CWsi" 
-                            class="w-full absolute inset-0 z-10 h-[2400px] md:h-[1800px] border-none"
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0"
-                            scrolling="no"
-                            allow="geolocation"
-                            title="Zoho Survey Form">
-                        </iframe>
-                    </div>
+                    <!-- ▲ 修正おわり ▲ -->
                     
                     <div class="pb-12 bg-white"></div>
                 </div>
