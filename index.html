@@ -90,31 +90,37 @@
                         </p>
                     </div>
 
-                    <div class="text-left bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-gray-700 space-y-3 mb-4">
-                        <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-2 text-center">お試し体験の流れと費用について</p>
+                    <!-- ▼ 修正：時系列のステップ形式で分かりやすく整理 ▼ -->
+                    <div class="text-left bg-gray-50 p-4 md:p-5 rounded-xl border border-gray-200 mb-4 shadow-sm">
+                        <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-5 text-center text-base">体験からご購入までの流れ</p>
                         
-                        <div class="flex items-start">
-                            <span class="bg-brand-gold text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">お支払</span>
-                            <span>原則、<strong>ヤマト運輸の代金引き換え</strong>にて、お届けと同時に3,000円をお支払いいただきます。</span>
-                        </div>
-                        <div class="flex items-start">
-                            <span class="bg-brand-brown text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">購入</span>
-                            <span>気に入ってご購入される場合は、<strong>代金から3,000円を差し引き、さらに送料も無料</strong>にて決済させていただきます。（実質お試し無料）</span>
-                        </div>
-                        <div class="flex items-start">
-                            <span class="bg-gray-500 text-white text-xs px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">配送</span>
-                            <span>専用の貸出機（通い箱入り）をお届けします。梱包の手間なく簡単にご返却も可能です。</span>
+                        <!-- STEP 1: お届け時 -->
+                        <div class="bg-white p-3 md:p-4 rounded-lg border border-gray-100 mb-5 relative shadow-sm">
+                            <span class="absolute -top-3 -left-2 bg-brand-gold text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded shadow">STEP 1</span>
+                            <h4 class="font-bold text-brand-brown text-sm md:text-base mb-1.5 ml-2 mt-1"><i class="fa-solid fa-box-open mr-1.5"></i> 専用の貸出機をお届け</h4>
+                            <p class="text-xs md:text-sm text-gray-600 ml-2 leading-relaxed">お受け取り時に、<strong>ヤマト運輸の代金引換にて3,000円</strong>をお支払ください。たっぷり2週間ご自宅でお試しいただけます。</p>
                         </div>
 
-                        <div class="mt-2 pt-2 border-t border-dashed border-gray-300">
-                            <div class="flex items-center text-red-600 font-bold bg-red-50 p-2 rounded">
-                                <i class="fa-solid fa-gift mr-2 text-lg"></i>
-                                <span class="text-xs md:text-sm">ご購入の際は、<span class="border-b-2 border-red-400">新品</span>を別途送付させていただきます。</span>
+                        <!-- STEP 2: 体験後 -->
+                        <div class="bg-white p-3 md:p-4 rounded-lg border border-gray-100 relative shadow-sm">
+                            <span class="absolute -top-3 -left-2 bg-brand-brown text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded shadow">STEP 2</span>
+                            <h4 class="font-bold text-brand-brown text-sm md:text-base mb-1.5 ml-2 mt-1"><i class="fa-solid fa-box mr-1.5"></i> 体験後は「通い箱」でカンタン返却</h4>
+                            <p class="text-xs md:text-sm text-gray-600 ml-2 mb-3 leading-relaxed">梱包の手間がかからない専用箱でご返却いただきます。<br>もし気に入ってご購入される場合は、以下の特典が適用されます。</p>
+                            
+                            <!-- ご購入特典のハイライト -->
+                            <div class="bg-red-50 p-3 rounded border border-red-100 ml-2">
+                                <p class="text-sm md:text-base font-bold text-red-600 mb-2 border-b border-red-200 pb-1.5"><i class="fa-solid fa-gift mr-1.5"></i> ご購入時の特典（実質お試し無料！）</p>
+                                <ul class="text-xs md:text-sm text-gray-700 list-disc pl-4 space-y-1.5">
+                                    <li>別途、新しい商品<strong class="text-red-600">「新品」</strong>をお送りします。</li>
+                                    <li>商品代金から<strong class="text-red-600">体験料（3,000円）をお値引き</strong>します。</li>
+                                    <li>さらに今回に限り、<strong class="text-red-600">送料も無料</strong>になります。</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <!-- ▲ 修正おわり ▲ -->
 
-                        <p class="text-xs text-gray-500">
+                    <p class="text-xs text-gray-500">
                         ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
                     </p>
 
@@ -320,25 +326,36 @@
                         </div>
                     </div>
 
+                    <!-- 誤って削除した「通い箱」セクションを完全に元の形・文言で復活 -->
                     <div class="mx-auto max-w-xl mb-10 bg-red-50 border-2 border-red-400 rounded-xl p-4 text-center shadow-md relative overflow-hidden group">
                         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
                         
                         <p class="text-red-700 font-bold text-base md:text-lg mb-3">
-                            ＼ 面倒な入替不要！お届けするのは<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「新品」</span>です ／
+                            ＼ 梱包の手間なし！<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「通い箱」</span>でお届け ／
                         </p>
                         
+                        <div class="mb-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                            <img src="delivery_box.jpg" alt="SLAショコラ専用通い箱" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Delivery+Box+Image';">
+                        </div>
                         <div class="bg-white/80 rounded-lg p-3 inline-block w-full border border-red-100">
                             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-brand-brown">
                                 <span class="flex items-center">
-                                    <i class="fa-solid fa-gift text-red-400 mr-1.5 text-xl"></i>
-                                    まずは体験
+                                    <i class="fa-solid fa-box-open text-red-400 mr-1.5 text-xl"></i>
+                                    専用ケースで到着
                                 </span>
                                 <i class="fa-solid fa-arrow-right text-red-400 text-xl hidden md:block animate-pulse"></i>
                                 <i class="fa-solid fa-arrow-down text-red-400 text-xl md:hidden animate-bounce"></i>
                                 <span class="flex items-center">
-                                    気に入ったら<span class="text-red-600 border-b-2 border-red-500 mx-1">そのまま購入OK</span><i class="fa-solid fa-thumbs-up text-red-500 ml-1"></i>
+                                    <i class="fa-solid fa-box text-red-400 mr-1.5 text-xl"></i>
+                                    そのまま返送OK
                                 </span>
                             </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-yellow-100 border-2 border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg font-bold text-sm md:text-base shadow-sm animate-pulse">
+                            <i class="fa-solid fa-gift mr-2 text-xl text-yellow-600"></i>
+                            気に入ってご購入される際は、<span class="text-red-600 text-lg">3,000円引き ＆ 送料無料</span>で<br class="md:hidden">
+                            <span class="text-xl text-red-600 border-b-4 border-red-200 inline-block leading-tight mx-1">「新品」</span>をお届けします！
                         </div>
                     </div>
 
@@ -370,7 +387,7 @@
                         </div>
                     </div>
                     
-                    <!-- ▼ 修正：iframeを削除し、リンクボタンに変更 ▼ -->
+                    <!-- フォームをリンクボタンに変更 -->
                     <div class="mt-8 mb-12 px-2 text-center">
                         <a href="https://survey.zohopublic.com/zs/q2CWsi" class="block w-full max-w-md mx-auto bg-[#d66861] hover:bg-[#c25552] text-white text-center py-4 md:py-5 rounded-sm shadow-md transition duration-300 font-bold text-lg md:text-xl tracking-wider">
                             2週間のお試し体験に申し込む
@@ -379,7 +396,6 @@
                             ※クリックすると、専用の申し込みフォーム画面へ移動します。
                         </p>
                     </div>
-                    <!-- ▲ 修正おわり ▲ -->
                     
                     <div class="pb-12 bg-white"></div>
                 </div>
