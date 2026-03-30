@@ -90,7 +90,6 @@
                         </p>
                     </div>
 
-                    <!-- ▼ 修正：時系列のステップ形式で分かりやすく整理 ▼ -->
                     <div class="text-left bg-gray-50 p-4 md:p-5 rounded-xl border border-gray-200 mb-4 shadow-sm">
                         <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-5 text-center text-base">体験からご購入までの流れ</p>
                         
@@ -118,7 +117,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ▲ 修正おわり ▲ -->
 
                     <p class="text-xs text-gray-500">
                         ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
@@ -284,7 +282,6 @@
                             </ul>
                         </div>
 
-                        <!-- ▼ 修正：特典表現をなくし、注意書きを追加 ▼ -->
                         <div class="bg-amber-50 border-2 border-brand-gold rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col items-center text-center">
                             <div class="absolute top-0 right-0 bg-brand-brown text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
                                 貸出機セット内容
@@ -326,10 +323,8 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- ▲ 修正おわり ▲ -->
                     </div>
 
-                    <!-- 誤って削除した「通い箱」セクションを完全に元の形・文言で復活 -->
                     <div class="mx-auto max-w-xl mb-10 bg-red-50 border-2 border-red-400 rounded-xl p-4 text-center shadow-md relative overflow-hidden group">
                         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
                         
@@ -390,15 +385,16 @@
                         </div>
                     </div>
                     
-                    <!-- フォームをリンクボタンに変更 -->
+                    <!-- ▼ 変更箇所：id追加 ▼ -->
                     <div class="mt-8 mb-12 px-2 text-center">
-                        <a href="https://survey.zohopublic.com/zs/q2CWsi" class="block w-full max-w-md mx-auto bg-[#d66861] hover:bg-[#c25552] text-white text-center py-4 md:py-5 rounded-sm shadow-md transition duration-300 font-bold text-lg md:text-xl tracking-wider">
+                        <a id="survey-link" href="https://survey.zohopublic.com/zs/q2CWsi" class="block w-full max-w-md mx-auto bg-[#d66861] hover:bg-[#c25552] text-white text-center py-4 md:py-5 rounded-sm shadow-md transition duration-300 font-bold text-lg md:text-xl tracking-wider">
                             2週間のお試し体験に申し込む
                         </a>
                         <p class="text-xs text-gray-500 mt-4">
                             ※クリックすると、専用の申し込みフォーム画面へ移動します。
                         </p>
                     </div>
+                    <!-- ▲ 変更箇所おわり ▲ -->
                     
                     <div class="pb-12 bg-white"></div>
                 </div>
@@ -406,6 +402,18 @@
             </div> 
         </div>
     </div>
+
+    <!-- ▼ 追加箇所：代理店コード付与スクリプト ▼ -->
+    <script>
+        // URLパラメータ(?ref=dealer_a など)を取得してZoho SurveyのURLに付与する
+        const params = new URLSearchParams(window.location.search);
+        const ref = params.get('ref');
+        if (ref) {
+            const link = document.getElementById('survey-link');
+            link.href = 'https://survey.zohopublic.com/zs/q2CWsi?ref=' + encodeURIComponent(ref);
+        }
+    </script>
+    <!-- ▲ 追加箇所おわり ▲ -->
 
 </body>
 </html>
