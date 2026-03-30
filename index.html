@@ -79,26 +79,35 @@
 
             <div class="bg-amber-50/50 p-6 md:p-8 text-center border-b border-dashed border-brand-gold/30">
                 <div class="inline-block bg-white border-2 border-brand-gold rounded-xl shadow-sm px-4 py-6 md:px-8 md:py-8 max-w-lg w-full">
+                    
                     <p class="text-sm font-bold text-gray-500 mb-3">
                         通常価格 107,800円(税込)のSLAショコラを
                     </p>
+                    
                     <div class="bg-gradient-to-b from-red-500 to-red-600 text-white rounded-full py-3 px-4 md:px-8 shadow-md mb-3 inline-block w-full max-w-sm mx-auto">
                         <p class="text-lg md:text-xl font-bold leading-none">
                             たっぷり<span class="text-2xl md:text-3xl text-yellow-200 drop-shadow-sm mx-1">2週間</span> 自宅でお試し
                         </p>
                     </div>
 
+                    <!-- ▼ 修正：時系列のステップ形式で分かりやすく整理 ▼ -->
                     <div class="text-left bg-gray-50 p-4 md:p-5 rounded-xl border border-gray-200 mb-4 shadow-sm">
                         <p class="font-bold text-brand-brown border-b border-gray-300 pb-2 mb-5 text-center text-base">体験からご購入までの流れ</p>
+                        
+                        <!-- STEP 1: お届け時 -->
                         <div class="bg-white p-3 md:p-4 rounded-lg border border-gray-100 mb-5 relative shadow-sm">
                             <span class="absolute -top-3 -left-2 bg-brand-gold text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded shadow">STEP 1</span>
                             <h4 class="font-bold text-brand-brown text-sm md:text-base mb-1.5 ml-2 mt-1"><i class="fa-solid fa-box-open mr-1.5"></i> 専用の貸出機をお届け</h4>
                             <p class="text-xs md:text-sm text-gray-600 ml-2 leading-relaxed">お受け取り時に、<strong>ヤマト運輸の代金引換にて3,000円</strong>をお支払ください。たっぷり2週間ご自宅でお試しいただけます。</p>
                         </div>
+
+                        <!-- STEP 2: 体験後 -->
                         <div class="bg-white p-3 md:p-4 rounded-lg border border-gray-100 relative shadow-sm">
                             <span class="absolute -top-3 -left-2 bg-brand-brown text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded shadow">STEP 2</span>
                             <h4 class="font-bold text-brand-brown text-sm md:text-base mb-1.5 ml-2 mt-1"><i class="fa-solid fa-box mr-1.5"></i> 体験後は「通い箱」でカンタン返却</h4>
                             <p class="text-xs md:text-sm text-gray-600 ml-2 mb-3 leading-relaxed">梱包の手間がかからない専用箱でご返却いただきます。<br>もし気に入ってご購入される場合は、以下の特典が適用されます。</p>
+                            
+                            <!-- ご購入特典のハイライト -->
                             <div class="bg-red-50 p-3 rounded border border-red-100 ml-2">
                                 <p class="text-sm md:text-base font-bold text-red-600 mb-2 border-b border-red-200 pb-1.5"><i class="fa-solid fa-gift mr-1.5"></i> ご購入時の特典（実質お試し無料！）</p>
                                 <ul class="text-xs md:text-sm text-gray-700 list-disc pl-4 space-y-1.5">
@@ -109,13 +118,17 @@
                             </div>
                         </div>
                     </div>
+                    <!-- ▲ 修正おわり ▲ -->
+
                     <p class="text-xs text-gray-500">
                         ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
                     </p>
+
                 </div>
             </div>
 
             <div class="p-6 md:p-10 space-y-12">
+
                 <section>
                     <div class="text-center mb-8">
                         <h3 class="text-xl font-bold text-brand-brown leading-relaxed">
@@ -123,6 +136,7 @@
                             あなたの行く場所すべてが特等席に。
                         </h3>
                     </div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
                             <div class="h-48 bg-gray-200">
@@ -137,6 +151,7 @@
                                 </p>
                             </div>
                         </div>
+
                         <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100">
                             <div class="h-48 bg-gray-200">
                                 <img src="scene_desk.jpg" alt="デスクで仕事中" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Desk+Scene';">
@@ -158,6 +173,7 @@
                         <span class="text-sm text-gray-500 font-bold block">Evidence. 科学的根拠</span>
                         <h3 class="text-xl font-bold text-gray-800">なぜ、疲れが癒やされるのか？</h3>
                     </div>
+
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <div class="text-center mb-6">
                             <h4 class="text-xl md:text-2xl font-bold text-brand-brown mb-2 leading-relaxed tracking-tight">
@@ -182,6 +198,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm">
                         <div class="bg-gray-50 px-4 py-2 border-b border-gray-100">
                             <h4 class="font-bold text-gray-700 text-sm"><i class="fa-solid fa-flask mr-2 text-brand-gold"></i>日本レジリエンス医学研究所による実証データ ※1</h4>
@@ -199,116 +216,196 @@
                 </section>
 
                 <div class="pt-4">
+                    
                     <div class="mb-16 px-4 md:px-8">
                         <h4 class="text-center font-bold text-brand-brown text-lg md:text-xl mb-10">
                             使い方は、たったの<span class="text-3xl font-serif-jp mx-1 text-brand-gold">3</span>ステップ。
                         </h4>
+                        
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative max-w-4xl mx-auto">
-                            <div class="hidden md:block absolute top-1/2 left-[32%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl"><i class="fa-solid fa-angle-right"></i></div>
-                            <div class="hidden md:block absolute top-1/2 left-[65%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl"><i class="fa-solid fa-angle-right"></i></div>
+                            <div class="hidden md:block absolute top-1/2 left-[32%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            <div class="hidden md:block absolute top-1/2 left-[65%] -translate-y-1/2 -translate-x-1/2 text-gray-200 text-3xl">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+
                             <div class="flex flex-col items-center text-center group">
                                 <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 1</span>
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300"><i class="fa-solid fa-plug"></i></div>
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
+                                    <i class="fa-solid fa-plug"></i>
+                                </div>
                                 <p class="font-bold text-gray-700 text-sm md:text-base">コンセントに挿す</p>
                             </div>
+
                             <div class="flex flex-col items-center text-center group">
                                 <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
                                 <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 2</span>
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
                                 <p class="font-bold text-gray-700 text-sm md:text-base">スマホと繋ぐ</p>
                             </div>
+
                             <div class="flex flex-col items-center text-center group">
                                 <i class="fa-solid fa-angle-down text-gray-200 text-2xl mb-4 md:hidden"></i>
                                 <span class="text-[10px] font-bold text-brand-gold mb-3 tracking-widest border border-brand-gold/30 px-3 py-1 rounded-full bg-white">STEP 3</span>
-                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300"><i class="fa-solid fa-music"></i></div>
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-50 mb-4 text-brand-brown text-3xl group-hover:-translate-y-1 transition duration-300">
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
                                 <p class="font-bold text-gray-700 text-sm md:text-base">いつもの音楽を再生する</p>
                             </div>
+                        </div>
+
+                        <div class="text-center mt-12">
+                            <p class="text-base md:text-lg font-bold text-brand-brown leading-relaxed border-b-2 border-brand-gold/30 inline-block pb-2 px-4">
+                                これだけで、お部屋がホテルスイートに変わります。
+                            </p>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 px-2 md:px-6">
                         <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col items-center text-center">
-                            <div class="text-brand-brown text-3xl mb-3"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
-                            <h4 class="font-bold text-brand-brown mb-3 text-base">ベッドサイドに収まる<br>コンパクトサイズ</h4>
+                            <div class="text-brand-brown text-3xl mb-3">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                            </div>
+                            <h4 class="font-bold text-brand-brown mb-3 text-base">
+                                ベッドサイドに収まる<br>コンパクトサイズ
+                            </h4>
                             <ul class="text-sm text-gray-600 space-y-2 text-left inline-block bg-gray-50 p-3 rounded-lg w-full">
-                                <li class="flex items-start"><span class="font-bold w-14 shrink-0 text-brand-brown">サイズ:</span><span>幅22cm × 高さ12.7cm<br>× 奥行9.6cm</span></li>
-                                <li class="flex items-start border-t border-gray-200 pt-2"><span class="font-bold w-14 shrink-0 text-brand-brown">重さ:</span><span>860g（片手で持てる軽さ）</span></li>
+                                <li class="flex items-start">
+                                    <span class="font-bold w-14 shrink-0 text-brand-brown">サイズ:</span>
+                                    <span>幅22cm × 高さ12.7cm<br>× 奥行9.6cm</span>
+                                </li>
+                                <li class="flex items-start border-t border-gray-200 pt-2">
+                                    <span class="font-bold w-14 shrink-0 text-brand-brown">重さ:</span>
+                                    <span>860g（片手で持てる軽さ）</span>
+                                </li>
                             </ul>
                         </div>
+
+                        <!-- ▼ 修正：特典表現をなくし、注意書きを追加 ▼ -->
                         <div class="bg-amber-50 border-2 border-brand-gold rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col items-center text-center">
-                            <div class="absolute top-0 right-0 bg-brand-brown text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">貸出機セット内容</div>
-                            <h4 class="font-bold text-brand-brown mb-3 mt-2 text-base">届いてすぐ、<br>あなたのスマホで聴けます。</h4>
+                            <div class="absolute top-0 right-0 bg-brand-brown text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">
+                                貸出機セット内容
+                            </div>
+                            
+                            <h4 class="font-bold text-brand-brown mb-3 mt-2 text-base">
+                                届いてすぐ、<br>あなたのスマホで聴けます。
+                            </h4>
+
                             <div class="w-full bg-white/60 rounded-lg p-2 mb-3 text-left border border-amber-100">
                                 <p class="text-[10px] text-gray-500 font-bold mb-1 text-center border-b border-gray-200 pb-1">標準付属品</p>
                                 <ul class="text-xs text-gray-600 space-y-1 pl-4 list-disc marker:text-brand-gold">
-                                    <li>ACアダプタ</li><li>USB電源ケーブル</li><li>ステレオミニケーブル</li>
+                                    <li>ACアダプタ</li>
+                                    <li>USB電源ケーブル</li>
+                                    <li>ステレオミニケーブル</li>
                                 </ul>
                             </div>
+
                             <div class="relative w-full">
                                 <div class="bg-white border border-brand-gold rounded-lg p-3 shadow-sm">
-                                    <div class="flex items-center justify-center gap-2 mb-1"><i class="fa-solid fa-mobile-screen-button text-brand-gold text-lg"></i><i class="fa-solid fa-link text-gray-300 text-xs"></i><i class="fa-solid fa-music text-brand-gold text-lg"></i></div>
-                                    <p class="text-xs text-brand-brown font-bold leading-tight mb-1">スマホ変換ケーブル<br><span class="text-[10px] font-normal text-gray-500">(USB-C & Lightning)</span></p>
-                                    <p class="text-[10px] text-gray-500 font-bold">お試し体験用に同梱いたします</p>
+                                    <div class="flex items-center justify-center gap-2 mb-1">
+                                        <i class="fa-solid fa-mobile-screen-button text-brand-gold text-lg"></i>
+                                        <i class="fa-solid fa-link text-gray-300 text-xs"></i>
+                                        <i class="fa-solid fa-music text-brand-gold text-lg"></i>
+                                    </div>
+                                    <p class="text-xs text-brand-brown font-bold leading-tight mb-1">
+                                        スマホ変換ケーブル<br>
+                                        <span class="text-[10px] font-normal text-gray-500">(USB-C & Lightning)</span>
+                                    </p>
+                                    <p class="text-[10px] text-gray-500 font-bold">
+                                        お試し体験用に同梱いたします
+                                    </p>
                                 </div>
                             </div>
+                            
+                            <div class="mt-3 bg-red-50 border border-red-100 rounded p-2 text-left w-full">
+                                <p class="text-[10px] text-red-700 leading-relaxed font-bold">
+                                    ※貸出時は接続ケーブル（Lightning/USB-C）を同梱しますが、ご購入時は別途オプション（有料）となります。
+                                </p>
+                            </div>
                         </div>
+                        <!-- ▲ 修正おわり ▲ -->
                     </div>
 
+                    <!-- 誤って削除した「通い箱」セクションを完全に元の形・文言で復活 -->
                     <div class="mx-auto max-w-xl mb-10 bg-red-50 border-2 border-red-400 rounded-xl p-4 text-center shadow-md relative overflow-hidden group">
                         <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
-                        <p class="text-red-700 font-bold text-base md:text-lg mb-3">＼ 梱包の手間なし！<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「通い箱」</span>でお届け ／</p>
+                        
+                        <p class="text-red-700 font-bold text-base md:text-lg mb-3">
+                            ＼ 梱包の手間なし！<span class="text-2xl md:text-3xl text-red-600 font-black bg-white px-2 py-0.5 rounded shadow-sm mx-1">「通い箱」</span>でお届け ／
+                        </p>
+                        
                         <div class="mb-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
                             <img src="delivery_box.jpg" alt="SLAショコラ専用通い箱" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Delivery+Box+Image';">
                         </div>
                         <div class="bg-white/80 rounded-lg p-3 inline-block w-full border border-red-100">
                             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-brand-brown">
-                                <span class="flex items-center"><i class="fa-solid fa-box-open text-red-400 mr-1.5 text-xl"></i>専用ケースで到着</span>
+                                <span class="flex items-center">
+                                    <i class="fa-solid fa-box-open text-red-400 mr-1.5 text-xl"></i>
+                                    専用ケースで到着
+                                </span>
                                 <i class="fa-solid fa-arrow-right text-red-400 text-xl hidden md:block animate-pulse"></i>
-                                <span class="flex items-center"><i class="fa-solid fa-box text-red-400 mr-1.5 text-xl"></i>そのまま返送OK</span>
+                                <i class="fa-solid fa-arrow-down text-red-400 text-xl md:hidden animate-bounce"></i>
+                                <span class="flex items-center">
+                                    <i class="fa-solid fa-box text-red-400 mr-1.5 text-xl"></i>
+                                    そのまま返送OK
+                                </span>
                             </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-yellow-100 border-2 border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg font-bold text-sm md:text-base shadow-sm animate-pulse">
+                            <i class="fa-solid fa-gift mr-2 text-xl text-yellow-600"></i>
+                            気に入ってご購入される際は、<span class="text-red-600 text-lg">3,000円引き ＆ 送料無料</span>で<br class="md:hidden">
+                            <span class="text-xl text-red-600 border-b-4 border-red-200 inline-block leading-tight mx-1">「新品」</span>をお届けします！
                         </div>
                     </div>
 
                     <div class="text-center mb-6">
+                        
                         <div class="animate-pulse mb-4">
-                            <p class="font-bold text-brand-brown text-xl">↓ 今すぐ空き状況を確認して申し込む ↓</p>
+                            <p class="font-bold text-brand-brown text-xl">
+                                ↓ 今すぐ空き状況を確認して申し込む ↓
+                            </p>
                             <p class="text-xs text-gray-500">（入力目安：1分）</p>
                         </div>
+                        
                         <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 mb-6 max-w-md mx-auto text-left shadow-sm">
                             <h5 class="font-bold text-gray-800 mb-2 text-center border-b border-gray-300 pb-2 text-sm">
                                 <i class="fa-solid fa-money-bill-wave text-brand-gold mr-2"></i>お支払いについて
                             </h5>
                             <p class="text-sm text-gray-700 leading-relaxed text-center">
                                 お支払い方法は<strong class="text-brand-brown text-lg">『代金引換』</strong>となります。<br>
-                                <span class="text-xs text-red-600 font-bold">※代引き手数料は無料です</span>
+                                <span class="text-xs text-red-600 font-bold">※代引き手数料は無料です</span><br>
+                                <span class="text-xs text-gray-500">（商品受取時に配達員へ3,000円をお支払いください）</span>
+                            </p>
+                        </div>
+
+                        <div class="inline-block text-left bg-red-50 border border-red-200 rounded-lg p-3 space-y-1">
+                            <p class="text-red-700 text-sm font-bold flex items-center">
+                                <i class="fa-solid fa-circle-exclamation mr-2"></i>
+                                今月の貸出枠：残りわずか（先着順）
                             </p>
                         </div>
                     </div>
                     
+                    <!-- フォームをリンクボタンに変更 -->
                     <div class="mt-8 mb-12 px-2 text-center">
-                        <a id="survey-link" href="https://survey.zohopublic.com/zs/q2CWsi" class="block w-full max-w-md mx-auto bg-[#d66861] hover:bg-[#c25552] text-white text-center py-4 md:py-5 rounded-sm shadow-md transition duration-300 font-bold text-lg md:text-xl tracking-wider">
+                        <a href="https://survey.zohopublic.com/zs/q2CWsi" class="block w-full max-w-md mx-auto bg-[#d66861] hover:bg-[#c25552] text-white text-center py-4 md:py-5 rounded-sm shadow-md transition duration-300 font-bold text-lg md:text-xl tracking-wider">
                             2週間のお試し体験に申し込む
                         </a>
-                        <script>
-                            /* ボタンの直後で実行して確実にURLを書き換える */
-                            (function() {
-                                var params = new URLSearchParams(window.location.search);
-                                var ref = params.get('ref');
-                                if (ref) {
-                                    var link = document.getElementById('survey-link');
-                                    if (link) {
-                                        link.href = "https://survey.zohopublic.com/zs/q2CWsi?ref=" + encodeURIComponent(ref);
-                                    }
-                                }
-                            })();
-                        </script>
-                        <p class="text-xs text-gray-500 mt-4">※クリックすると、専用の申し込みフォーム画面へ移動します。</p>
+                        <p class="text-xs text-gray-500 mt-4">
+                            ※クリックすると、専用の申し込みフォーム画面へ移動します。
+                        </p>
                     </div>
                     
                     <div class="pb-12 bg-white"></div>
                 </div>
+
             </div> 
         </div>
     </div>
+
 </body>
 </html>
