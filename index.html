@@ -398,33 +398,21 @@
         </div>
     </div>
 
-    <script>
-        (function() {
-            // ページ読み込み完了時に実行
-            window.addEventListener('DOMContentLoaded', function() {
-                // 1. 現在のページのURLからパラメータを取得
-                var urlParams = new URLSearchParams(window.location.search);
-                var ref = urlParams.get('ref');
-
-                // 2. もし 'ref' パラメータが存在する場合のみ処理
-                if (ref) {
-                    var surveyLink = document.getElementById('survey-link');
-                    if (surveyLink) {
-                        // 3. 元のURL（Zoho）にパラメータを結合
-                        // もし日本語が含まれていても安全なようにエンコードする
-                        var baseLink = "https://survey.zohopublic.com/zs/q2CWsi";
-                        var finalUrl = baseLink + "?ref=" + encodeURIComponent(ref);
-                        
-                        // 4. ボタンのhref属性を上書き
-                        surveyLink.href = finalUrl;
-                        
-                        // デバッグ用（ブラウザの検証ツールで確認可能）
-                        console.log("代理店コードを付与しました: " + ref);
-                        console.log("遷移先URL: " + surveyLink.href);
-                    }
+<script>
+        function updateSurveyLink() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var ref = urlParams.get('ref');
+            if (ref) {
+                var surveyLink = document.getElementById('survey-link');
+                if (surveyLink) {
+                    surveyLink.href = "https://survey.zohopublic.com/zs/q2CWsi?ref=" + encodeURIComponent(ref);
                 }
-            });
-        })();
+            }
+        }
+        // 即実行
+        updateSurveyLink();
+        // 念のため少し遅れてもう一回実行（Tailwindなどの読み込みによるラグ対策）
+        setTimeout(updateSurveyLink, 500);
     </script>
     </body>
 </html>
